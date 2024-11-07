@@ -1,0 +1,53 @@
+<!-- voting/templates/voting/voting_completed.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Voting Completed</title>
+  <style>
+    /* CSS for bold and large font size */
+    body, html {
+      height: 100%;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 36px;  /* Large font size for heading */
+      font-weight: bold; /* Make it bold */
+    }
+
+    p {
+      font-size: 24px;  /* Larger font size for paragraph */
+      font-weight: bold; /* Make it bold */
+    }
+
+    a {
+      font-size: 20px;  /* Larger font size for link */
+      font-weight: bold; /* Make it bold */
+      text-decoration: none;
+      color: #007BFF;  /* Styling the link color */
+      margin-top: 20px;
+      display: inline-block;
+    }
+
+    a:hover {
+      text-decoration: underline; /* Add underline effect on hover */
+    }
+  </style>
+</head>
+<body>
+
+  <div>
+    <h2>Voting Completed</h2>
+    <p>Thank you for participating in the voting. Your vote has been successfully recorded.</p>
+    <a href="{% url 'voting:logout' %}">Logout</a>
+  </div>
+
+</body>
+</html>

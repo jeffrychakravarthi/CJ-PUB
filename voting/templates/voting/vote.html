@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Centered Form</title>
+  <style>
+    /* CSS to center the form */
+    body, html {
+      height: 100%;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+    }
+
+    .form-container {
+      text-align: center;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      width: 300px; /* Adjust width as needed */
+    }
+
+    h2 {
+      font-size: 36px; /* Bigger size for the candidates heading */
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    button {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="form-container">
+    <h2>Candidates</h2> <!-- Big and bold heading for "Candidates" -->
+    <form method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit">Vote</button>
+    </form>
+  </div>
+
+</body>
+</html>

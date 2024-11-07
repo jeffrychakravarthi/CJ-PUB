@@ -1,0 +1,110 @@
+<!-- voting/templates/voting/results.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Voting Results</title>
+
+  <style>
+    /* CSS to center content and style the table */
+    body, html {
+      height: 100%;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      flex-direction: column;
+    }
+
+    h2 {
+      font-size: 36px;
+      font-weight: bold;
+    }
+
+    table {
+      width: 110%;
+      margin-top: 20px;
+      border-collapse: collapse;
+      text-align: center;
+      font-size: 20px;
+    }
+
+    th, td {
+      padding: 15px;
+      border: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #f2f2f2;
+      font-weight: bold;
+    }
+
+    td {
+      font-size: 22px;
+    }
+
+    /* Style for buttons to be displayed as block */
+    .button-link, .button-logout {
+      font-size: 18px;
+      font-weight: bold;
+      color: #ffffff;
+      padding: 6px 0px;
+      margin-top: 10px;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      display: block; /* Display each button as a block */
+      width: 200px;
+      text-align: center;
+      transition: background-color 0.3s;
+    }
+
+    /* Style for Back to Admin Panel button */
+    .button-link {
+      background-color: #0662bd;
+    }
+
+    .button-link:hover {
+      background-color: #003d7b;
+    }
+
+    /* Style for Logout button with a distinct color */
+    .button-logout {
+      background-color: #d9534f;
+    }
+
+    .button-logout:hover {
+      background-color: #c9302c;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Voting Results</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Candidate</th>
+        <th>Votes</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for candidate in results %}
+      <tr>
+        <td>{{ candidate.name }}</td>
+        <td>{{ candidate.vote_count }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  <!-- Buttons placed one on top of the other -->
+  <a href="{% url 'voting:admin_dashboard' %}" class="button-link">Back to Admin Panel</a>
+  <a href="{% url 'voting:logout' %}" class="button-logout">Logout</a>
+
+</body>
+</html>

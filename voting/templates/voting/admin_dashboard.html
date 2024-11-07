@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel</title>
+  <style>
+    /* Set background image */
+    body {
+      background-image: url("{% static 'images/Background-design.png' %}");
+      background-size: cover; /* Make the image cover the entire screen */
+      background-position: center center; /* Center the image */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 110vh;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: white; /* White text for contrast */
+    }
+
+    .container {
+      text-align: center;
+      background: rgba(0, 0, 0, 0.5); /* Semi-transparent black background for text visibility */
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    /* Common styling for all buttons */
+    .button-link {
+      display: inline-block;
+      padding: 10px 20px;
+      font-size: 16px;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      margin: 10px;
+    }
+
+    /* Individual button colors */
+    .button-view-results {
+      background-color: #007BFF; /* Blue */
+    }
+    .button-view-results:hover {
+      background-color: #0056b3;
+    }
+
+    .button-reset-votes {
+      background-color: #c10c0c; /* Green */
+    }
+    .button-reset-votes:hover {
+      background-color: #bf0000bd;
+    }
+
+    .button-vote {
+      background-color: #19cd6a; /* Yellow */
+      color: #333; /* Dark text for contrast */
+    }
+    .button-vote:hover {
+      background-color: #03ac4fd6;
+    }
+
+    .button-logout {
+      background-color: #cc2068; /* Red */
+    }
+    .button-logout:hover {
+      background-color: #d00057ae;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Admin Panel</h2>
+    <!-- Button links for actions with separate colors -->
+    <a href="{% url 'voting:view_results' %}" class="button-link button-view-results">View Results</a>
+    <a href="{% url 'voting:reset_votes' %}" class="button-link button-reset-votes">Reset Votes</a>
+    <a href="{% url 'voting:vote' %}" class="button-link button-vote">Vote</a>
+    <a href="{% url 'voting:logout' %}" class="button-link button-logout">Logout</a>
+  </div>
+
+</body>
+</html>
